@@ -9,7 +9,6 @@ app.use(bodyParser.json());
 
 const dotenv = require('dotenv');
 dotenv.config();
-//console.log(`Your port is ${process.env.PORT}`); // 8626
 
 
 app.get('/', (req, res) => {
@@ -33,6 +32,6 @@ client.connect(err => {
     //client.close();
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log(`app listening at http://localhost:${port}`)
 });
